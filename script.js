@@ -77,21 +77,21 @@ var handlers = {
 // output todo(s) in runtime
 var view = {
   displayTodos: function() {
-    var todosUL = document.getElementById('displayTodos');
-    todosUL.innerHTML = '';
+    var todosUl = document.getElementById('displayTodos');
+    todosUl.innerHTML = '';
     for (var i = 0; i < todoList.todos.length; i++) {
       var todoLi = document.createElement('li');
       var todo = todoList.todos[i];
       var textCompleted = '';
 
       if (todo.completed === true) {
-        todoCompleted = '(X) ' + todo.todoText;
+        textCompleted = '(X) ' + todo.todoText;
       } else {
-        todoCompleted = '( ) ' + todo.todoText;
+        textCompleted = '( ) ' + todo.todoText;
       }
 
-      todoLi.textContent = todoCompleted;
-      todosUL.appendChild(todoLi);
+      todoLi.textContent = textCompleted;
+      todosUl.appendChild(todoLi);
     }
   }
 };
