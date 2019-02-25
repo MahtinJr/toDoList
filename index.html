@@ -1,44 +1,38 @@
 <!doctype html>
-
 <html>
-
   <head>
-    
+    <title>Todo List</title>
     <link rel="stylesheet" href="lib/style.css">
-
   </head>
-
   <body>
-    
     <h1>TodoList</h1>
-    
+    <!-- togggle all todo list -->
     <div>
-      <button onclick="handlers.displayTodos()">Display Todos</button>
       <button onclick="handlers.toggleAll()">Toogle All</button>
     </div>
-
+    <!-- add item to todo list -->
     <div>
       <button onclick="handlers.addTodo()">Add</button>
       <input id="addTodoTextInput" type="text">
     </div>
-
+    <!-- change a todo item -->
     <div>
       <button onclick="handlers.changeTodo()">Change</button>
       <input id="changeTodoPositionInput" type="number" placeholder="Enter position">
       <input id="changeTodoTextInput" type="text" placeholder="Enter new text">
     </div>
-
+    <!-- delete a todo item -->
     <div>
       <button onclick="handlers.deleteTodo()">Delete</button>
       <input id="deleteTodoPositionInput" type="number" placeholder="Enter position">
     </div>
-
+    <!-- toggle items completed -->
     <div>
       <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
       <input id="toggleCompletedPositionInput" type="number">
     </div>
+    <!-- display todo list runtime -->
+    <ul id="displayTodos"></ul>
     <script src="lib/script.js"></script>
-
   </body>
-
 </html>
