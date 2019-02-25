@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Todo List</title>
-    <link rel="stylesheet" href="lib/style.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>TodoList</h1>
@@ -21,11 +21,6 @@
       <input id="changeTodoPositionInput" type="number" placeholder="Enter position">
       <input id="changeTodoTextInput" type="text" placeholder="Enter new text">
     </div>
-    <!-- delete a todo item -->
-    <div>
-      <button onclick="handlers.deleteTodo()">Delete</button>
-      <input id="deleteTodoPositionInput" type="number" placeholder="Enter position">
-    </div>
     <!-- toggle items completed -->
     <div>
       <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
@@ -33,6 +28,6 @@
     </div>
     <!-- display todo list runtime -->
     <ul id="displayTodos"></ul>
-    <script src="lib/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
