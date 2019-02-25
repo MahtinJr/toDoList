@@ -1,44 +1,25 @@
 var todoList = {
   todos: [],
 
-  // displays todo list in console
-  displayTodos: function() {
-    if (this.todos.length === 0) {
-      console.log('Your todo list is empty!');
-    } else {
-      console.log('My todos:');
-      for (var i = 0; i < this.todos.length; i++) {
-        if (this.todos[i].completed === true) {
-          console.log('(X)', this.todos[i].todoText);
-        } else {
-          console.log('( )', this.todos[i].todoText);
-        }
-      }
-    }
-  },
   // adds item to todo list
   addTodo: function(todoText) {
     this.todos.push({
       todoText: todoText,
       completed: false,
     });
-    this.displayTodos();
   },
   // changes item from todo list
   changeTodo: function(position, todoText) {
     this.todos[position].todoText = todoText;
-    this.displayTodos();
   },
   // deletes an item from todo list
   deleteTodo: function(position) {
     this.todos.splice(position, 1);
-    this.displayTodos();
   },
   // toggles item whether completed or not completed
   toggleCompleted: function(position) {
     var todo = this.todos[position];
     todo.completed = !todo.completed;
-    this.displayTodos();
   },
   //toggles all items completed or not completed
   toggleAll: function() {
@@ -60,14 +41,12 @@ var todoList = {
         this.todos[i].completed = true;
       }
     }
-    this.displayTodos();
+    view.displayTodos();
   },
 };
 
+// user interaction
 var handlers = {
-  displayTodos: function() {
-    todoList.displayTodos();
-  },
   addTodo: function() {
     var addTodoTextInput = document.getElementById('addTodoTextInput');
     todoList.addTodo(addTodoTextInput.value);
@@ -95,28 +74,30 @@ var handlers = {
   }
 };
 
+// output todo(s) in runtime
+var view = {
+  displayTodos: function() {
+    var todosUL = document.getElementById('displayTodos');
+    todosUL.innerHTML = '';
+    for (var i = 0; i < todoList.todos.length; i++) {
+      var todoLi = document.createElement('li');
+      var todo = todoList.todos[i];
+      var textCompleted = '';
 
+      if (todo.completed === true) {
+        todoCompleted = '(X) ' + todo.todoText;
+      } else {
+        todoCompleted = '( ) ' + todo.todoText;
+      }
 
+      todoLi.textContent = todoCompleted;
+      todosUL.appendChild(todoLi);
+    }
+  }
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// shortcut to debugger
+function runDebugger(funcToDebug) {
+  debugger;
+  funcToDebug();
+};
