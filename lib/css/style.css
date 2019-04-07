@@ -11,3 +11,44 @@ h1 {
 div {
   padding: 5px;
 }
+
+ul {
+  width: 590px;
+  margin: auto;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.toggleBtn {
+  width: 2.5em;
+  height: 2.5em;
+  position: relative;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  opacity: 0;
+}
+
+.deleteBtn {
+  padding-left: 5px;
+  margin-left: .75%;
+}
+
+i.fas.fa-check {
+    position: absolute;
+    margin: auto;
+    padding: .7em;
+}
+
+i.far.fa-circle {
+    position: absolute;
+    margin: auto;
+    padding: .7em;
+}
