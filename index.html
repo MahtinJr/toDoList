@@ -3,9 +3,11 @@
   <head>
     <title>Todo List</title>
     <link rel="stylesheet" href="lib/css/style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
   <body>
-    <h1>TodoList</h1>
+    <h1 id="date"></h1>
     <!-- toggle all todo list -->
     <div>
       <button onclick="handlers.toggleAll()">Toggle All</button>
@@ -20,11 +22,6 @@
       <button onclick="handlers.changeTodo()">Change</button>
       <input id="changeTodoPositionInput" type="number" placeholder="Enter position">
       <input id="changeTodoTextInput" type="text" placeholder="Enter new text">
-    </div>
-    <!-- toggle items completed -->
-    <div>
-      <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
-      <input id="toggleCompletedPositionInput" type="number">
     </div>
     <!-- display todo list runtime -->
     <ul id="displayTodos"></ul>
